@@ -1,0 +1,566 @@
+---
+- description: 
+  buttons: submit,cancel
+  label: vmware-vm-request-with-memory-improved-with-service-name
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Basic Information
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: ''
+      display: edit
+      label: Select VM Details
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: vm_prefix
+        description: hidden
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: VM Hostname Prefix
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: approval_level
+        description: 
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: multi
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Approval Level
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: true
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: tag_0_os
+        description: ''
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: linux
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: OS Tag
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: false
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: service_name
+        description: 
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Service Name
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: 
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: 
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: tag_0_environment
+        description: 
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: prod
+        values:
+        - - dev
+          - Development
+        - - prod
+          - Production
+        - - qa
+          - QA
+        - - test
+          - Test
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+        label: Environment *
+        position: 4
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldRadioButton
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: service
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Service
+        position: 5
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Integration/CloudForms
+          ae_class: Methods
+          ae_instance: ListServices
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+        values: 
+      - name: tag_0_role
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values:
+        - :id: 
+          :name: "<None>"
+          :description: "<None>"
+        - :id: 99000000000147
+          :name: cfme
+          :description: cfme
+        - :id: 99000000000528
+          :name: control
+          :description: control
+        - :id: 99000000000701
+          :name: dbserver
+          :description: dbserver
+        - :id: 99000000000527
+          :name: gitlab
+          :description: gitlab
+        - :id: 99000000000148
+          :name: hosting
+          :description: hosting
+        - :id: 99000000000152
+          :name: jboss
+          :description: jboss
+        - :id: 99000000000704
+          :name: lbserver
+          :description: lbserver
+        - :id: 99000000001016
+          :name: linux
+          :description: linux
+        - :id: 99000000000698
+          :name: monitoring
+          :description: monitoring
+        - :id: 99000000000276
+          :name: mssql_on_windows
+          :description: mssql-on-windows
+        - :id: 99000000000155
+          :name: nginx
+          :description: nginx
+        - :id: 99000000000859
+          :name: os_master
+          :description: os-master
+        - :id: 99000000000858
+          :name: os_node
+          :description: os-node
+        - :id: 99000000001014
+          :name: pcv_vpn_router
+          :description: pcv-vpn-router
+        - :id: 99000000001160
+          :name: primary
+          :description: primary
+        - :id: 99000000000271
+          :name: remote
+          :description: remote
+        - :id: 99000000000270
+          :name: rtr1
+          :description: rtr1
+        - :id: 99000000000269
+          :name: rtr2
+          :description: rtr2
+        - :id: 99000000000144
+          :name: tower
+          :description: tower
+        - :id: 99000000000278
+          :name: tower_east
+          :description: tower_east
+        - :id: 99000000000273
+          :name: towerdb
+          :description: towerdb
+        - :id: 99000000000529
+          :name: web
+          :description: web
+        - :id: 99000000000703
+          :name: webserver
+          :description: webserver
+        - :id: 99000000000524
+          :name: windows_domain_controller
+          :description: windows_domain_controller
+        - :id: 99000000000525
+          :name: windows_node
+          :description: windows_node
+        - :id: 99000000000526
+          :name: windows_workstation
+          :description: windows_workstation
+        - :id: 99000000001161
+          :name: worker
+          :description: worker
+        values_method: 
+        values_method_options: {}
+        options:
+          :category_id: '99000000000141'
+          :force_single_value: true
+          :sort_by: description
+          :sort_order: ascending
+          :category_description: role
+          :category_name: kubernetes::role
+        label: Select Server Role
+        position: 6
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTagControl
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+    - description: Description
+      display: edit
+      label: Select Application Details
+      display_method: 
+      display_method_options: 
+      position: 1
+      dialog_fields:
+      - name: tag_1_application
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values:
+        - :id: 
+          :name: "<None>"
+          :description: "<None>"
+        - :id: 99000000000756
+          :name: iis
+          :description: iis web server
+        - :id: 99000000000616
+          :name: jboss
+          :description: jboss application
+        - :id: 99000000000705
+          :name: lamp
+          :description: lamp stack
+        - :id: 99000000001057
+          :name: mssql
+          :description: microsoft sql Server
+        - :id: 99000000000137
+          :name: nginx
+          :description: nginx_standalone
+        values_method: 
+        values_method_options: {}
+        options:
+          :category_id: '99000000000134'
+          :force_single_value: true
+          :sort_by: description
+          :sort_order: ascending
+          :category_description: application
+          :category_name: application
+        label: Select Application
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldTagControl
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+    - description: Description
+      display: edit
+      label: Select HW Details
+      display_method: 
+      display_method_options: 
+      position: 2
+      dialog_fields:
+      - name: vm_memory
+        description: ''
+        data_type: integer
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: '1024'
+        values:
+        - - 
+          - "<None>"
+        - - '1024'
+          - 1024 MB
+        - - '2048'
+          - 2048 MB
+        - - '4096'
+          - 4096 MB
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: Amount of Memory
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
+      - name: number_of_sockets
+        description: ''
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: '1'
+        values:
+        - - 
+          - "<None>"
+        - - '4'
+          - Four CPUs
+        - - '1'
+          - One CPU
+        - - '2'
+          - Two CPUs
+        values_method: 
+        values_method_options: {}
+        options:
+          :sort_by: description
+          :sort_order: ascending
+          :force_multi_value: false
+        label: How many CPUs
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: false
+        dynamic: false
+        show_refresh_button: false
+        load_values_on_init: false
+        read_only: false
+        auto_refresh: false
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+        dialog_field_responders: []
