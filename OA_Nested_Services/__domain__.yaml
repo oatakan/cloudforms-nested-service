@@ -1,0 +1,13 @@
+---
+object_type: domain
+version: 1.0
+object:
+  attributes:
+    name: OA_Nested_Services
+    description: OA_Nested_Services
+    display_name: 
+    priority: 16
+    enabled: true
+    tenant_id: 1
+    source: user
+    top_level_namespace: 
